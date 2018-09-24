@@ -63,7 +63,8 @@ class Registration extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/registration" render={()=>(!this.state.redirect ? (<Form createPlayer={this.createPlayer}/>) : (<Redirect to='/game'/>))} />
+          <Route path="/registration" render={()=>(!this.state.redirect ? (<Form createPlayer={this.createPlayer}/>) : (<Redirect to='/game'/>))} />
+          
           <Route path="/game" component={(props) => <Game {...props} getPlayer={this.getPlayer}/>}/>
         </Switch>
       </BrowserRouter>

@@ -5,11 +5,37 @@
     margin-top: 10%;
 }
 
-h1{
+.welcome-header{
     font-size: 100px;
 }
 
 .welcome-btn-ctn{
     display: flex;
     justify-content: space-around;
+}
+
+.welcome-btn{
+    border: 1px solid black;
+    background-color: transparent;
+    font-size: 24px;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: 0.4s;
+    border-radius: 8px;
+}
+
+.welcome-btn:hover{
+    background-color:black;
+    color: white !important;
+}
+
+.welcome-link{
+    color: black;
+    text-decoration: none;
+    width: inherit;
+    height: inherit;
+}
+
+a:hover{
+    color: white;
 }

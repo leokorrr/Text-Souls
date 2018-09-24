@@ -3,3 +3,8 @@
 
 # Game.js 
 # -> if not logged in redirect to login page
+
+# Login.js
+# -> change if to form validation
+
+# Tommorow begin from login redirect

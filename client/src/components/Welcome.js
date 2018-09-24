@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import '../static/css/welcome.css'
 
 export default class Welcome extends Component {
@@ -6,10 +6,14 @@ export default class Welcome extends Component {
     return (
       <div className="welcome-flex-ctn">
         <div>
-            <h1>Text Souls</h1>
+            <h1 className="welcome-header">Text Souls</h1>
             <div className="welcome-btn-ctn">
-                <button>LogIn</button>
-                <button>Sign up</button>
+            <a href="/registration" className="welcome-link">
+              <button className="welcome-btn">SignUp</button>
+            </a>
+            <a href="/login" className="welcome-link">
+              <button className="welcome-btn">LogIn</button>
+            </a>  
             </div>
         </div>
       </div>
