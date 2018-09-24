@@ -1,0 +1,15 @@
+.welcome-flex-ctn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+h1{
+    font-size: 100px;
+}
+
+.welcome-btn-ctn{
+    display: flex;
+    justify-content: space-around;
+}

@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://admin:admin123@ds257372.mlab.com:57372/text-souls', { useNewUrlParser: true });
 
 var PlayerSchema = mongoose.Schema({
-    playerName: String,
+    playerName: {type: String, index: {unique: true}},
     playerClass: String,
     weapon: {
         name: String,

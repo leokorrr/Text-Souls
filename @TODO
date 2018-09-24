@@ -1,2 +1,5 @@
 # Welcome.js
 # -> make form validation 
+
+# Game.js 
+# -> if not logged in redirect to login page

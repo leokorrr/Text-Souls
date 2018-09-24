@@ -10,7 +10,7 @@ var Player = require('./models/playerSchema');
 
 
 // Setting up routes variable
-var indexRoute = require('./routes/index');
+var indexRoute = require('./routes');
 var classesRoute = require('./routes/classes');
 var equipmentRoute = require('./routes/equipment');
 var inventoryRoute = require('./routes/inventory');
