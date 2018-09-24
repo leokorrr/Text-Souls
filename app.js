@@ -6,6 +6,8 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
+var Player = require('./models/playerSchema');
+
 
 // Setting up routes variable
 var indexRoute = require('./routes/index');
@@ -18,7 +20,7 @@ var playerRoute = require('./routes/player');
 // Connectig to the database 
 mongoose.connect('mongodb://admin:admin123@ds257372.mlab.com:57372/text-souls', { useNewUrlParser: true }, (err)=>{
     if (err) throw err;
-    console.log('database connected');
+    console.log('From app.js: database connected');
     
 });
 
@@ -42,6 +44,17 @@ app.use('/data', equipmentRoute);
 app.use('/data', inventoryRoute);
 app.use('/data', statsRoute);
 app.use('/data', playerRoute);
+app.get('/data/player/:name', function(req, res){
+    Player.findOne({
+        playerName: req.params.name
+    }).exec(function(err, player){
+        if(err){
+            res.send('error')
+        } else {
+            res.json(player);
+        }
+    })
+})
 
 // Firing server 
 var PORT = 4000;

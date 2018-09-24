@@ -15,7 +15,7 @@ class App extends Component {
   }
   
   
-  getPlayer = e => {
+  createPlayer = e => {
     e.preventDefault();
     const playerName = e.target.elements.playerName.value;
     const playerClass = e.target.elements.playerClass.value;
@@ -36,23 +36,23 @@ class App extends Component {
     .then(player => {
       console.log(player);
       this.setState({ player: player });
-      console.log(this.state.player);
     })
     .catch(err =>{
       console.log(err);
     })
     this.setState({redirect: true});
-    console.log(this.state.redirect);
   }
 
-
+  getPlayer = () => {
+    var player =  this.state.player;
+  }
 
   render() {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" render={()=>(!this.state.redirect ? (<Welcome getPlayer={this.getPlayer}/>) : (<Redirect to='/game'/>))} />
-          <Route path="/game" component={Game}/>
+          <Route exact path="/" render={()=>(!this.state.redirect ? (<Welcome createPlayer={this.createPlayer}/>) : (<Redirect to='/game'/>))} />
+          <Route path="/game" component={(props) => <Game {...props} getPlayer={this.getPlayer}/>}/>
         </Switch>
       </BrowserRouter>
     );

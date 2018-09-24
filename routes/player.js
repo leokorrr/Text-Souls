@@ -6,19 +6,14 @@ var Class = require('../models/classSchema');
 
 mongoose.connect('mongodb://admin:admin123@ds257372.mlab.com:57372/text-souls', { useNewUrlParser: true }, (err)=>{
     if (err) throw err;
-    console.log('database connected');
+    console.log('From player.js: database connected');
     
 });
 
-playerArr = [];
-
-router.get('/player', (req, res)=>{
-    res.json({player: playerArr});
-});
+playerData = this.playerData;
 
 router.post('/player', (req, res)=>{
     const playerData = req.body
-    
     function createPlayer(id){
         Class.findById(id)
             .exec((err, classObj)=>{
@@ -50,9 +45,19 @@ router.post('/player', (req, res)=>{
                 critical: classObj.chances.critical
             }
         })
-        player.save((err)=>{
+        Player.find({
+            playerName: playerData.playerName
+        }).exec((err,res)=>{
             if(err) throw err;
-            console.log(`Player ${player.playerName} was created`);
+            if(res.length != 0){
+                console.log('user is already exists');
+            }
+            if(res.length == 0){
+                player.save((err)=>{
+                    if(err) throw err;
+                    console.log(`Player ${player.playerName} was created`);
+                })
+            }
         })
     }
 

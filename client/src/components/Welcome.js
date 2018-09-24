@@ -4,7 +4,7 @@ export default class Welcome extends Component {
   render() {
     return (
       <div>
-        <form action="" method="POST" onSubmit={this.props.getPlayer}>
+        <form action="" method="POST" onSubmit={this.props.createPlayer}>
           <label htmlFor="playerName">Enter your name:</label>
           <br/>
           <input type="text" name="playerName" id="playerName"/><br/><br/>
