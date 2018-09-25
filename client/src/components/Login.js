@@ -7,6 +7,7 @@ import Game from './Game';
 export default class Login extends Component {
 
   state = {
+    playerName: '',
     redirect: false
   }
 
@@ -22,12 +23,15 @@ checkPlayer = e => {
     .then((res)=>{return res.json()})
     .then((res)=>{
         if(res !== null){
-            this.setState({redirect: true})
+            this.setState({playerName: playerName, redirect: true})
+            
         } else {
             alert('there is no user with this name');
         }
     })
 }
+
+s
 
   render() {
     return (
@@ -35,7 +39,7 @@ checkPlayer = e => {
         <Switch>
           <Route path="/login" render={()=>(!this.state.redirect ? (<LoginForm checkPlayer={this.checkPlayer}/>) : (<Redirect to='/game'/>))} />
           
-          <Route path="/game" component={Game}/>
+          <Route path="/game" component={()=><Game sendPlayer={this.sendPlayer} playerName={this.state.playerName}/>}/>
         </Switch>
       </BrowserRouter>
     )

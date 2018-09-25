@@ -1,0 +1,85 @@
+body{
+    /* background-color: black */
+}
+.game-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game{
+    width: 1440px;
+    height: 800px;
+    display: flex;
+    border: 1px solid black;
+}
+
+
+
+
+/* Main window styles */
+
+.main{
+    width: 1100px;
+    background-color: goldenrod;
+    border-right: 1px solid black;
+}
+
+.enemy-box{
+    height: 100px;
+    border-bottom: 1px solid black;
+}
+
+.game-logs{
+    height: 600px;
+    border-bottom: 1px solid black;
+}
+
+.player-box{
+    height: 100px;
+}
+
+
+
+/* Sidebar styles */
+
+.sidebar{
+    width: 340px;
+    background-color: rgb(218, 75, 32)
+}
+
+.player-name{
+    height: 50px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.weapon{
+    height: 50px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.stats{
+    height: 200px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.stats>div>ul{
+    list-style: none;
+}
+
+.stats>div>ul>li{
+    margin-bottom: 12px
+}
+
+.inventory{
+    height: 500px;
+}
