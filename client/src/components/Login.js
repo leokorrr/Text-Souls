@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+
+import LoginForm from './LoginForm';
+import Game from './Game';
 
 export default class Login extends Component {
+
+  state = {
+    redirect: false
+  }
 
 checkPlayer = e => {
     e.preventDefault();
@@ -23,15 +31,13 @@ checkPlayer = e => {
 
   render() {
     return (
-      <div>
-        <form action="" method="POST" onSubmit={this.checkPlayer}>
-        <label htmlFor="playerName">Enter your name:</label>
-          <br/><br/>
-          <input type="text" name="playerName" id="playerName"/>
-          <br/><br/>
-          <button type="Submit">Start!</button>
-        </form>
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/login" render={()=>(!this.state.redirect ? (<LoginForm checkPlayer={this.checkPlayer}/>) : (<Redirect to='/game'/>))} />
+          
+          <Route path="/game" component={Game}/>
+        </Switch>
+      </BrowserRouter>
     )
   }
 }

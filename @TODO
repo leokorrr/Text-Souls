@@ -1,3 +1,5 @@
+# create folder Forms in Components/
+
 # Welcome.js
 # -> make form validation 
 
@@ -7,4 +9,5 @@
 # Login.js
 # -> change if to form validation
 
-# Tommorow begin from login redirect
+# Form.js
+# -> change Form.js -> RegistrationForm.js 
