@@ -9,7 +9,7 @@ export default class LoginForm extends Component {
             <br/><br/>
             <input type="text" name="playerName" id="playerName"/>
             <br/><br/>
-            <button type="Submit">Start!</button>
+            <button type="Submit">Enter the game</button>
         </form>
     </div>
     )
